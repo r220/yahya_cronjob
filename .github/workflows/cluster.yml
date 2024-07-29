@@ -4,21 +4,34 @@
 name: Node.js Package
 
 on:
+  release:
+    types: [created]
   schedule:
   - cron: "0/5 * * * *"
   workflow_dispatch:
-
+  
 jobs:
-  resources:
-    name: Scrape
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-
+      - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
         with:
           node-version: 16
       - run: npm ci
+      - run: npm test
 
-      - name: Fetch resources
-        run: node cluster.js
+  publish-npm:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org/
+      - run: npm ci
+      - run: npm publish
+      - run: node cluster.js
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
