@@ -21,7 +21,8 @@ jobs:
       - run: npm install
       - run: npx puppeteer browsers install chrome
       - run: npm ci
-      - run: npm test
+      - run: node cluster.js
+
 
   publish-npm:
     needs: build
