@@ -21,7 +21,7 @@ jobs:
       - run: npm install
       - run: npx puppeteer browsers install chrome
       - run: npm ci
-      - run: node cluster.js
+      - run: node test_cluster.js
 
 
   publish-npm:
@@ -35,6 +35,6 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: npm ci
       - run: npm publish
-      - run: node cluster.js
+      - run: node test_cluster.js
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
