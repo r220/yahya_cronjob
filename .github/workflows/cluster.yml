@@ -9,7 +9,7 @@ on:
   schedule:
   - cron: "0/5 * * * *"
   workflow_dispatch:
-  
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -30,9 +30,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          registry-url: https://registry.npmjs.org/
+        # with:
+        #   node-version: 16
+        #   registry-url: https://registry.npmjs.org/
       - run: npm ci
       - run: npm publish
       - run: node test_cluster.js
