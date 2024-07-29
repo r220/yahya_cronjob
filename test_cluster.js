@@ -197,7 +197,7 @@ var colors = [];
     await cluster.idle();
     await cluster.close();
 })().finally(() => {
-    console.log("finally\nvalues: \n", values, "colors: \n", colors);
+    console.log("finally\nvalues: \n", values, "\ncolors: \n", colors);
 
     let queries = "";
     values.forEach((value) => {
