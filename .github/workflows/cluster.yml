@@ -6,6 +6,8 @@ name: Node.js Package
 on:
   schedule:
   - cron: "0/5 * * * *"
+  workflow_dispatch:
+
 jobs:
   installDependencies:
     name: Install Dependencies
