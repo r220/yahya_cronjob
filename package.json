@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "defered": "^1.0.0",
+    "mysql2": "^3.10.2",
+    "open": "^10.1.0",
+    "pg": "^8.12.0",
+    "puppeteer": "^22.13.0",
+    "puppeteer-cluster": "^0.24.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-adblocker": "^2.13.6",
+    "puppeteer-extra-plugin-anonymize-ua": "^2.4.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "user-agents": "^1.1.266"
+  },
+  "name": "yahya",
+  "version": "1.0.0",
+  "main": "yahya.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
