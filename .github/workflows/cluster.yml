@@ -18,6 +18,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
+      - run: npm install
+      - run: npx puppeteer browsers install chrome
       - run: npm ci
       - run: npm test
 
