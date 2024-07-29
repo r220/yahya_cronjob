@@ -9,20 +9,16 @@ on:
   workflow_dispatch:
 
 jobs:
-  installDependencies:
-    name: Install Dependencies
+  resources:
+    name: Scrape
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Install Dependencies
-        uses: actions/setup-node@v2
-        env:
-          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: "false"
+
+      - uses: actions/setup-node@v3
         with:
-          args: install
-      - name: Test Code
-        uses: mujo-code/puppeteer-headful@16.6.0
-        env:
-          CI: "true"
-        with:
-          args: node cluster.js
+          node-version: 16
+      - run: npm ci
+
+      - name: Fetch resources
+        run: node cluster.js
