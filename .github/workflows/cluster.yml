@@ -26,4 +26,5 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - run: node test_cluster.js
+    - run: npm ci
+    - run: node test_cluster.js
