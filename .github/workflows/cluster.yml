@@ -26,6 +26,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+    - run: npm install
     - run: npm ci
     - run: npx puppeteer browsers install chrome
     - run: npm test
