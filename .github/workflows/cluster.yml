@@ -18,7 +18,7 @@ jobs:
         node:
           - 18
         puppeteer_version:
-          - 20.3.0 # 2022-01-17 - Chromium 98.0.4758.0
+          - 22.13.0 # 2022-01-17 - Chromium 98.0.4758.0
 
         os:
           - ubuntu-latest
@@ -30,7 +30,7 @@ jobs:
           node-version: ${{ matrix.node }}
       - name: npm ci
         uses: bahmutov/npm-install@v1 # basically npm ci with a cache
-      - run: npm install puppeteer@${{ matrix.puppeteer_version }}
+      # - run: npm install puppeteer@${{ matrix.puppeteer_version }}
       - run: node test_cluster.js
       - run: npm run coverage
       - name: Collect coverage
