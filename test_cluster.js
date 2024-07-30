@@ -50,9 +50,8 @@ var colors = [];
         puppeteerOptions: {
             // workerCreationDelay: 100,
             headless: true,
-            defaultViewport: false,
             // userDataDir: "./tmp",
-            ignoreHTTPSErrors: true,
+            // ignoreHTTPSErrors: true,
             executablePath: executablePath(),
             defaultViewport: null,
             ignoreDefaultArgs: ["--disable-extensions"],
@@ -60,7 +59,7 @@ var colors = [];
                 "--no-sandbox",
                 "--disable-gpu",
                 "--enable-webgl",
-                "--window-size=800,800",
+                // "--window-size=800,800",
             ],
         },
     });
