@@ -18,7 +18,8 @@
   "version": "1.0.0",
   "main": "yahya.js",
   "scripts": {
-    "test": "node test_cluster.js"
+    "test": "node test_cluster.js",
+    "coverage": "jest --coverage"
   },
   "keywords": [],
   "author": "",
