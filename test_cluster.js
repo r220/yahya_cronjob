@@ -13,7 +13,7 @@ const { Client } = require('pg');
 //     // workerCreationDelay: 100
 // });
 
-const conString = "postgresql://root:6RHocZ4oxHzeJBPLQoCd5u5G0IwZRjM2@dpg-cqfs4j9u0jms7387eiu0-a.oregon-postgres.render.com/yahyadb?ssl=true";
+const conString = "postgresql://root:tDzW5XB3ck97zpkDkFRlKmp8vEDCPX7A@dpg-cr5c2fij1k6c7394csug-a.oregon-postgres.render.com/yahyadb_ta8l?ssl=true";
 var client = new Client(conString);
 client.connect();
 
